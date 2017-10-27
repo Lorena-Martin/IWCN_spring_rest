@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Información</title>
+	<link href="../../css/estilo.css" rel="stylesheet"/>
+</head>
+<body>
+	<center>
+		<h1>Información del producto:</h1>
+	    <div class="info">
+	    	<p th:text="'Código numérico: ' + ${codigo}"></p>
+			<p th:text="'Nombre: ' + ${nombre}"></p>
+			<p th:text="'Descripción: '+ ${descripcion}"></p>
+			<p th:text="'Precio: ' + ${precio}"></p>
+			<input type="button" value="Atrás" onclick="location.href='/listaProductos'"/>
+	    </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Agregado</title>
+	<link href="../../css/estilo.css" rel="stylesheet"/>
+</head>
+<body>
+	<center>
+	    <h1 th:text="'Se ha añadido el producto ' + ${nombre} + ' correctamente'"></h1>
+	    <input type="button" value="Atrás" onclick="location.href='/inicio'"/>
+    </center>
+</body>
+</html>

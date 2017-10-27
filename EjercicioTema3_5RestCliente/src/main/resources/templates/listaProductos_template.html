@@ -1,0 +1,18 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Lista de productos</title>
+	<link href="../../css/estilo.css" rel="stylesheet"/>
+</head>
+<body>
+	<center>
+    	<h1 th:text="'Lista de Productos: '"></h1>
+    </center>
+    <ul th:each="p : ${lista}">
+		<li><a th:href="@{/info/{optionId}(optionId=${p.id})}" th:text="'Producto ' + ${p.id} + ': ' + ${p.nombre}"></a>
+		    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/eliminado/{optionId}(optionId=${p.id})}" th:text="' [Eliminar]'"></a>
+		    <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/editar/{optionId}(optionId=${p.id})}" th:text="' [Editar]'"></a></li>		
+	</ul>
+   	<input type="button" value="Atrás" onclick="location.href='/inicio'"/>
+</body>
+</html>

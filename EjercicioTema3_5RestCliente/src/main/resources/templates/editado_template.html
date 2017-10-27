@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Editado</title>
+	<link href="../../css/estilo.css" rel="stylesheet"/>
+</head>
+<body>
+	<center>
+	    <h1 th:text="'Se ha editado el producto ' + ${nombre}"></h1>
+	    <input type="button" value="Atrás" onclick="location.href='/listaProductos'"/>
+    </center>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Editar</title>
+	<link href="../../css/estilo.css" rel="stylesheet"/>
+</head>
+<body>
+    <form th:class="formulario" th:action="@{/editado}" th:object="${producto}" method="post">
+    	<center>
+    		
+    		<div><label th:text="'ID: ' + ${id}"></label>
+    		<input type="hidden" th:field="*{id}"/></div>
+    		<div><label>Código numérico:</label>
+    		<input type="text" th:field="*{codigo}"/></div>
+	    	<div><label>Nombre:</label>
+	    	<input type="text" th:field="*{nombre}"/></div>
+	    	<div><label>Descripción:</label>
+	    	<textarea rows="10" th:field="*{descripcion}"></textarea></div>
+	    	<div><label>Precio:</label>
+	    	<input type="text" th:field="*{precio}"/></div>
+	    	<br/>
+		    <div>
+		    	<button type="submit">Editar</button>
+		    	<input type="button" value="Atrás" onclick="location.href='/listaProductos'"/>
+		    </div>
+    	</center>
+    </form>
+</body>
+</html>

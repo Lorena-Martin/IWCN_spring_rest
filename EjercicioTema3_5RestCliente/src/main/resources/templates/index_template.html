@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Tienda de productos</title>
+		<meta charset="utf-8"></meta>
+		<link href="../../css/estilo.css" rel="stylesheet"/>
+	</head>
+
+	<body>
+		
+			<h1>Bienvenido a la tienda</h1>
+		
+		<ul>
+			<li><a th:href="@{/listaProductos}">Listado de productos</a></li>
+			<li sec:authorize="hasRole('ROLE_ADMIN')"><a th:href="@{/nuevoProducto}">Nuevo producto</a></li>
+		</ul>
+		<form th:action="@{/cerrarSesion}" method="post">
+	        <input type="submit" value="Cerrar sesión" />
+	    </form>
+	</body>
+</html>

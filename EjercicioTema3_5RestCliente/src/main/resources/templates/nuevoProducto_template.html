@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8"></meta>
+	<title>Formulario</title>
+	<link href="../../css/estilo.css" rel="stylesheet"/>
+</head>
+<body>
+    <form th:class="formulario" th:action="@{/guardado}" th:object="${producto}" method="post">
+    	<center>
+	    	<div><label>Código numérico:</label>
+	    	<input type="text" th:field="*{codigo}"/></div>
+	    	<div><label>Nombre:</label>
+	    	<input type="text" th:field="*{nombre}"/></div>
+	    	<div><label>Descripción:</label>
+	    	<textarea rows="10" th:field="*{descripcion}"></textarea></div>
+	    	<div><label>Precio:</label>
+	    	<input type="text" th:field="*{precio}"/></div>
+	    	<br/>
+		    <div>
+		    	<button type="submit">Añadir</button>
+		    	<input type="button" value="Atrás" onclick="location.href='/inicio'"/>
+		    </div>
+    	</center>
+    </form>
+</body>
+</html>
